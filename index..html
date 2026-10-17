@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 Consultora | Personas · Talento · Organizaciones</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0f232e;
+            --primary-blue: #183342;
+            --accent-teal: #224353;
+            --accent-glow: #38bdf8;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            --bg-light: #f8fafc;
+            --bg-card: #ffffff;
+            --card-border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* HEADER & NAV */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-text {
+            border-left: 2px solid #cbd5e1;
+            padding-left: 12px;
+        }
+
+        .logo-title {
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .logo-subtitle {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .btn-header {
+            background-color: var(--primary-blue);
+            color: white !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-header:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(15, 35, 46, 0.88), rgba(24, 51, 66, 0.82)), 
+                        url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: white;
+            padding: 6rem 2rem 8rem;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-tag {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2.5px;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-desc {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            max-width: 480px;
+            font-weight: 300;
+        }
+
+        .btn-light {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #ffffff;
+            color: var(--primary-dark);
+            padding: 0.75rem 1.8rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-light:hover {
+            background: #f1f5f9;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+        }
+
+        .hero-gfx {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* SECTION LAYOUTS */
+        .section-padding {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        /* NUESTRA FORMA DE TRABAJO */
+        .metodologia-section {
+            background-color: #ffffff;
+        }
+
+        .metodologia-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .metodologia-intro p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-box {
+            background: #f8fafc;
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            display: flex;
+            gap: 2rem;
+            background: #f8fafc;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: var(--primary-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        /* SERVICIOS */
+        .services-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 3rem;
+        }
+
+        .services-intro p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem 1.2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-color: #cbd5e1;
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #e0f2fe;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* SOBRE NOSOTROS Y EQUIPO (INTEGRADO) */
+        .about-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-banner {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(15, 35, 46, 0.85), rgba(24, 51, 66, 0.75)),
+                        url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80') center/cover;
+            padding: 3rem;
+            color: white;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .about-banner h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .about-banner p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* TARJETAS DE EQUIPO */
+        .team-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            margin-top: 5rem; /* Separación de los valores */
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+
+        .team-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .avatar-container {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #cbd5e1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .team-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transform: scale(1.35);
+        }
+
+        .team-info h4 {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .team-info p {
+            font-size: 0.85rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .team-body p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #0077b5;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: #f0f7fc;
+            transition: background 0.3s;
+        }
+
+        .linkedin-link:hover {
+            background: #e1f0fa;
+        }
+
+        /* VALORES */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+        }
+
+        .value-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e0f2fe;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .value-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .value-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* FOOTER / CONTACTO */
+        .footer-cta {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cta-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-top: 0.5rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-item a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* MODAL DE CONTACTO */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text-main);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .btn-submit {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .services-wrapper, .about-grid, .team-grid, .footer-container, .hero-container {
+                grid-template-columns: 1fr;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .step-card {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .services-grid, .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-box">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 80 L35 25 L60 80 Z" stroke="#183342" stroke-width="8" fill="none"/>
+                    <path d="M30 80 C 30 50, 70 50, 70 80" stroke="#224353" stroke-width="6" fill="none"/>
+                    <circle cx="80" cy="35" r="15" fill="#183342"/>
+                </svg>
+                <div class="logo-text">
+                    <div class="logo-title">A2 CONSULTORA</div>
+                    <div class="logo-subtitle">Personas · Talento · Organizaciones</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#metodologia">Metodología</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#" class="btn-header" onclick="openModal()">Hablemos <i class="fas fa-chevron-right" style="font-size:0.7rem;"></i></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <div>
+                <div class="hero-tag">Consultora de Gestión Humana</div>
+                <h1 class="hero-title">Conectamos personas, talento y organizaciones</h1>
+                <p class="hero-desc">Acompañamos a empresas en el desarrollo de su talento humano, impulsando equipos más fuertes, saludables y comprometidos.</p>
+                <a href="#metodologia" class="btn-light">Conocé nuestra metodología <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="hero-gfx">
+                <svg width="320" height="200" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 100 L70 30 L120 100 Z" stroke="rgba(255,255,255,0.4)" stroke-width="4"/>
+                    <path d="M60 100 C 60 60, 140 60, 140 100" stroke="#38bdf8" stroke-width="4"/>
+                    <circle cx="150" cy="40" r="20" fill="rgba(255,255,255,0.8)"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUESTRA FORMA DE TRABAJO -->
+    <section id="metodologia" class="section-padding metodologia-section">
+        <div class="container">
+            <div class="metodologia-intro">
+                <div class="section-tag">Nuestra Metodología</div>
+                <h2 class="section-title">Partimos de una pregunta.</h2>
+                <div class="quote-box">
+                    "Antes de ofrecer una solución automática, queremos entender qué está demandando realmente la organización."
+                </div>
+                <p>¿Qué pasa cuando una empresa incorpora una persona que técnicamente parece adecuada, pero después no logra adaptarse? ¿O cuando aparecen problemas de rotación o equipos que no funcionan como se esperaba?</p>
+                <p>Nosotros proponemos otra mirada. Trabajamos desde el Comportamiento Organizacional, entendiendo que para comprender lo que sucede tenemos que mirar tres niveles: las personas, los grupos y la organización.</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Análisis de la demanda</h3>
+                        <p>Cuando nos plantean una necesidad, no ofrecemos un "paquete" estándar. Primero comprendemos qué está solicitando la organización, qué situación originó esa solicitud y qué variables ocultas pueden estar interviniendo.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Mirada Integral del Problema</h3>
+                        <p>Una demanda de selección, por ejemplo, rara vez es solo la necesidad de cubrir un puesto. Puede estar vinculada a cómo está organizado el trabajo, al funcionamiento del equipo, al estilo de liderazgo, a fallas en la comunicación o a la cultura de la empresa.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Intervención Situada</h3>
+                        <p>A partir de este análisis detallado, definimos la intervención más adecuada. Puede ser una selección, una inducción, una capacitación específica o una combinación de acciones. Nuestro objetivo final es acompañar el proceso de cambio para optimizar los espacios de trabajo y alinearlos a los objetivos de cada organización.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section-padding" style="background-color: var(--bg-light); border-bottom: 1px solid #e2e8f0;">
+        <div class="container services-wrapper">
+            <div class="services-intro">
+                <div class="section-tag">Nuestros Servicios</div>
+                <h2 class="section-title">Soluciones a medida de cada organización</h2>
+                <hr style="width: 40px; height: 3px; background: var(--primary-blue); border: none; margin-bottom: 1.5rem;">
+                <p>Diseñamos estrategias y herramientas para potenciar el talento, mejorar los procesos y construir culturas organizacionales más sanas y sostenibles.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-circle"><i class="fas fa-brain"></i></div>
+                    <h3>Capacitación y desarrollo</h3>
+                    <p>Potenciamos habilidades y competencias.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-circle"><i class="fas fa-chart-line"></i></div>
+                    <h3>Gestión de clima y cultura</h3>
+                    <p>Mejores personas, mejores equipos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-circle"><i class="fas fa-compass"></i></div>
+                    <h3>Procesos de cambio organizacional</h3>
+                    <p>Te acompañamos en cada etapa del proceso.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-circle"><i class="fas fa-user-friends"></i></div>
+                    <h3>Reclutamiento y selección</h3>
+                    <p>Encontramos el talento que impulsa tu equipo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS Y EQUIPO (INTEGRADO) -->
+    <section id="nosotros" class="section-padding about-section">
+        <div class="container">
+            <!-- Bloque 1: Visión y Valores -->
+            <div class="about-grid">
+                <div class="about-banner">
+                    <div class="section-tag" style="color: #cbd5e1;">Sobre Nosotros</div>
+                    <h3>Experiencia, compromiso y mirada de futuro</h3>
+                    <p>En A2 Consultora creemos en el valor de las personas y en el impacto que genera una gestión humana consciente. Trabajamos junto a cada organización para diseñar soluciones reales, sostenibles y alineadas a sus objetivos.</p>
+                </div>
+
+                <div>
+                    <div class="section-tag">Nuestros Valores</div>
+                    <div class="values-grid" style="margin-top: 2rem;">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-users"></i></div>
+                            <div>
+                                <h4>Personas</h4>
+                                <p>Creemos en el potencial de cada colaborador.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-bullseye"></i></div>
+                            <div>
+                                <h4>Compromiso</h4>
+                                <p>Nos involucramos en cada proyecto.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div>
+                                <h4>Profesionalismo</h4>
+                                <p>Como Licenciados en Psicología, combinamos nuestra formación con la experiencia para brindar resultados alineados con los objetivos de cada organización.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-seedling"></i></div>
+                            <div>
+                                <h4>Desarrollo</h4>
+                                <p>Impulsamos organizaciones más justas e inclusivas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloque 2: Equipo -->
+            <div class="team-title">
+                <div class="section-tag">Nuestro Equipo</div>
+                <h2 class="section-title">Quiénes Somos</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Un equipo profesional dedicado a integrar la psicología con la gestión estratégica del talento humano.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Agustín Cañas -->
+                <div class="team-card">
+                    <div>
+                        <div class="team-header">
+                            <div class="avatar-container">
+                                <img src="agustin-canas.jpg.jpg" alt="Agustín Cañas" class="team-avatar">
+                            </div>
+                            <div class="team-info">
+                                <h4>Agustín Cañas</h4>
+                                <p>Lic. en Psicología · Especialista en RRHH</p>
+                            </div>
+                        </div>
+                        <div class="team-body">
+                            <p>Soy Licenciado en Psicología por la Universidad Nacional de Mar del Plata, con formación técnica complementaria en Gestión de Recursos Humanos por la Universidad Tecnológica Nacional.</p>
+                            <p>Mi enfoque profesional integra el rigor de las metodologías psicológicas con una perspectiva humanista, actuando como un agente de cambio que prioriza la sostenibilidad de los procesos en el tiempo. Entiendo que la eficacia de cualquier intervención radica en su capacidad de ser perdurable; por ello, me caracterizo por un enfoque resolutivo y práctico que busca soluciones inmediatas con la mirada puesta en su viabilidad a largo plazo.</p>
+                            <p>Desde la psicología, aporto un pensamiento crítico fundamental para el ámbito corporativo, centrándome especialmente en la identificación de talento y el análisis del clima organizacional. Mi objetivo es proyectar esta mirada en áreas de Talent Acquisition o Talento Humano, contribuyendo con proactividad a la construcción de entornos laborales sólidos, eficientes y humanos.</p>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/agustinbca%C3%B1as/" target="_blank" class="linkedin-link">
+                        <i class="fab fa-linkedin"></i> Ver perfil en LinkedIn
+                    </a>
+                </div>
+
+                <!-- Agustín Alippi -->
+                <div class="team-card">
+                    <div>
+                        <div class="team-header">
+                            <div class="avatar-container">
+                                <img src="agustin-alippi.jpg.png" alt="Agustín Alippi" class="team-avatar" style="transform: scale(1); object-position: center;">
+                            </div>
+                            <div class="team-info">
+                                <h4>Agustín Alippi</h4>
+                                <p>Lic. en Psicología · RRHH & Psicología Laboral</p>
+                            </div>
+                        </div>
+                        <div class="team-body">
+                            <p>Licenciado en Psicología por la Universidad Nacional de Mar del Plata, orientado al área de Recursos Humanos y Psicología Laboral. Cuento con experiencia en reclutamiento y selección, entrevistas laborales, evaluación de competencias y procesos organizacionales.</p>
+                            <p>Me interesa contribuir al desarrollo de las personas y los equipos, integrando herramientas de la Psicología con una mirada estratégica sobre las organizaciones.</p>
+                            <p>Como consultor especializado en el área de Talento Humano, me enfoco en diseñar e implementar soluciones ágiles y personalizadas que potencien el rendimiento organizacional, impulsando la evolución constante del talento y fortaleciendo la cultura interna de cada equipo.</p>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/agust%C3%ADn-alippi-a703a1144/" target="_blank" class="linkedin-link">
+                        <i class="fab fa-linkedin"></i> Ver perfil en LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACTO -->
+    <footer id="contacto" class="footer-cta">
+        <div class="footer-container">
+            <div>
+                <div class="section-tag" style="color: #94a3b8;">¿Hablamos?</div>
+                <h2 class="cta-title">Tu próximo desafío también es el nuestro</h2>
+            </div>
+            <div>
+                <p style="color: #cbd5e1; margin-bottom: 1.5rem;">Completá el formulario o escribinos directamente. Estamos para ayudarte.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="far fa-envelope"></i>
+                        <a href="mailto:info@a2consultora.com">info@a2consultora.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Mar del Plata, Argentina</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com" target="_blank">Seguinos en LinkedIn</a>
+                    </div>
+                </div>
+                <button onclick="openModal()" class="btn-light" style="margin-top: 1.5rem;">Contactanos <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div><strong>A2 Consultora</strong> | Personas · Talento · Organizaciones</div>
+            <div>Construyendo juntos el futuro del trabajo.</div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE CONTACTO -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 style="color: var(--primary-dark); margin-bottom: 0.5rem;">Contactar a A2 Consultora</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Dejanos tus datos y nos pondremos en contacto a la brevedad.</p>
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label>Nombre y Apellido</label>
+                    <input type="text" required placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" required placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje / Consulta</label>
+                    <textarea rows="4" required placeholder="¿En qué podemos ayudarte?"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPT INTERACTIVO -->
+    <script>
+        function openModal() {
+            document.getElementById('contactModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('¡Gracias por comunicarte con A2 Consultora! Nos pondremos en contacto pronto.');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
